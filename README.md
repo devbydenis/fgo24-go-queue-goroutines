@@ -17,6 +17,7 @@ go run main.go
 ```
 ✅ Contoh Output
 ```bash
+----Now you have: 3 queues----
 Queue: 1 is for 1 seconds
 Queue: 2 is for 1 seconds
 Queue: 3 is for 2 seconds

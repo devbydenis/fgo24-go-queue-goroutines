@@ -17,16 +17,16 @@ func queue(wg *sync.WaitGroup, msg string) {
 
 func main() {
 	for {
-	randomNumber := rand.Intn(3-1+1)+1
-	
-	var wg sync.WaitGroup
-	fmt.Printf("----Now you have: %d queues----\n", randomNumber)
-	for q := 1; q <= randomNumber; q++ {
-		wg.Add(1)
+		randomNumber := rand.Intn(3-1+1)+1
+		var wg sync.WaitGroup
 		
-		go queue(&wg, fmt.Sprintf("%d", q))
-		
-		wg.Wait()
-	}
+		fmt.Printf("----Now you have: %d queues----\n", randomNumber)
+		for q := 1; q <= randomNumber; q++ {
+			wg.Add(1)
+			
+			go queue(&wg, fmt.Sprintf("%d", q))
+			
+			wg.Wait()
+		}
 	}
 }
